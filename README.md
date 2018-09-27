@@ -1,2 +1,2 @@
 # SpringDemo
-Basic spring application WITHOUT  Spring MVC
+Basic spring application with Spring MVC
