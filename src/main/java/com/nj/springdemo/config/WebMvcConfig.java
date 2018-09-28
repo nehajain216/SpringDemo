@@ -11,15 +11,16 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 import org.thymeleaf.templateresolver.TemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "{com.nj.springdemo.web}")
+@ComponentScan(basePackages = {"com.nj.springdemo.web"})
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	@Bean
 	public TemplateResolver templateResolver() {
-		TemplateResolver templateResolver = new TemplateResolver();
+		TemplateResolver templateResolver = new ServletContextTemplateResolver();
 		templateResolver.setPrefix("/WEB-INF/views/");
 		templateResolver.setSuffix(".html");
 		templateResolver.setTemplateMode("HTML5");

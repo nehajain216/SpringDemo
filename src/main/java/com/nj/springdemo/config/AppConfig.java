@@ -74,7 +74,7 @@ public class AppConfig {
 	}
 
 	@Bean
-	private DataSource dataSource() {
+	public DataSource dataSource() {
 		BasicDataSource datasource = new BasicDataSource();
 		datasource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
 		datasource.setUrl(env.getProperty("jdbc.url"));
